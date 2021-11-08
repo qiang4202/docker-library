@@ -69,7 +69,7 @@ RUN     yum -y install curl \
 	    --with-stream_realip_module \
 	    --with-stream_ssl_module \
 	    --with-stream_ssl_preread_module \
-	    --with-cc-opt='-g -O2 -fdebug-prefix-map=/data/builder/debuild/nginx-1.19.0/debian/debuild-base/nginx-1.19.0=. -fstack-protector-strong -Wformat -Werror=fo
+	    --with-cc-opt='-g -O2 -fdebug-prefix-map=/data/builder/debuild/nginx-$NGINX_VERSION/debian/debuild-base/nginx-$NGINX_VERSION=. -fstack-protector-strong -Wformat -Werror=fo
 rmat-security -Wp,-D_FORTIFY_SOURCE=2 -fPIC' --with-ld-opt='-Wl,-z,relro -Wl,-z,now -Wl,--as-needed -pie' \            " \
         && mkdir -p /var/cache/nginx \
         && ./configure $BUILD_CONFIG \
